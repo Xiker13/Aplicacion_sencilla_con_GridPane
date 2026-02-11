@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:controller="org.xiker.MainController"
+          xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <!-- Column Constraints -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" /> <!-- Column 0 -->
+        <ColumnConstraints hgrow="NEVER" minWidth="100"/> <!-- Column 1 -->
+    </columnConstraints>
+
+    <!-- Row Constraints -->
+    <rowConstraints>
+        <RowConstraints/> <!-- Row 0 -->
+        <RowConstraints/> <!-- Row 1 -->
+        <RowConstraints vgrow="ALWAYS"/> <!-- Row 2 (TextArea) -->
+        <RowConstraints/> <!-- Row 3 -->
+    </rowConstraints>
+
+    <!-- Row 0 -->
+    <!-- Name Label and TextField wrapped in HBox for alignment -->
+    <HBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER_LEFT">
+        <Label text="Nombre:">
+            <font>
+                <Font name="Arial Bold" size="14"/>
+            </font>
+        </Label>
+        <TextField fx:id="nameField" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    
+    <Button text="OK" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#handleOkAction">
+        <font>
+            <Font name="Arial" size="14"/>
+        </font>
+    </Button>
+
+    <!-- Row 1 -->
+    <Label text="Descripción:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <font>
+            <Font name="Arial Bold" size="14"/>
+        </font>
+    </Label>
+    
+    <Button text="Cancelar" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#handleCancelAction">
+        <font>
+            <Font name="Arial" size="14"/>
+        </font>
+    </Button>
+
+    <!-- Row 2 -->
+    <TextArea fx:id="descArea" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <!-- Row 3 -->
+    <Label fx:id="statusLabel" text="Estado: Listo" GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <font>
+            <Font name="Arial" size="12"/>
+        </font>
+    </Label>
+
+</GridPane>
