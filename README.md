@@ -12,7 +12,7 @@ Esta es una aplicación de escritorio simple construida con JavaFX que demuestra
 
 ## Requisitos Previos
 
-- Java Development Kit (JDK) 21 o superior.
+- Java Development Kit (JDK) 17 o superior.
 - Maven 3.6.0 o superior.
 
 ## Cómo Ejecutar
@@ -25,9 +25,7 @@ mvn clean javafx:run
 ```
 
 ### Opción 2: Desde IntelliJ IDEA / Eclipse
-Si ejecutas la aplicación directamente desde tu IDE y ves el error `Error: JavaFX runtime components are missing`, ejecuta la clase **`Launcher.java`** en lugar de `Main.java`.
-
-Esto se debe a que JavaFX está modularizado y a veces requiere configuraciones especiales si la clase principal extiende directamente de `Application`.
+Si ejecutas la aplicación directamente desde tu IDE, utiliza la clase **`Launcher.java`** como punto de entrada. Esto evita errores comunes relacionados con los módulos de JavaFX.
 
 ## Estructura del Proyecto
 
